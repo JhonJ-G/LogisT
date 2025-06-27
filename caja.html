@@ -4,65 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caja/Cocina - Sistema de Pedidos</title>
+    <link rel="icon" type="image/png" href="imagenes/tamalito.png">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/caja-styles.css">
 </head>
 <body>
-    <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h2>Pedidos Recibidos</h2>
-            <button id="mostrarCrearPedido" class="main-btn oval-btn">Crear Pedido</button>
+    <div class="page-container">
+        <div class="header-bar">
+            <a href="index.html" class="back-btn">← Inicio</a>
+            <h2>🏪 Caja / Cocina</h2>
+            <button id="mostrarCrearPedido" class="create-order-btn">+ Crear Pedido</button>
         </div>
-        <div id="notificacion" class="hidden"></div>
-
-        <div class="pedidos-flex">
-            <div class="col-pedidos">
-                <h3>Pedidos Pendientes</h3>
-                <div id="listaPedidosPendientes"></div>
+        
+        <div class="content-wrapper">
+            <div class="dashboard-grid">
+                <div class="status-card pending-card">
+                    <div class="card-header">
+                        <h3>⏳ Pendientes de Pago</h3>
+                        <span class="status-badge pending">En proceso</span>
+                    </div>
+                    <div class="card-content">
+                        <div id="listaPedidosPendientes" class="orders-list"></div>
+                    </div>
+                </div>
+                
+                <div class="status-card completed-card">
+                    <div class="card-header">
+                        <h3>✅ Pedidos Pagados</h3>
+                        <span class="status-badge completed">Completados</span>
+                    </div>
+                    <div class="card-content">
+                        <div id="listaPedidosPagados" class="orders-list"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-pedidos">
-                <h3>Pedidos Pagados (Vista Previa)</h3>
-                <div id="listaPedidosPagados"></div>
+            
+            <div class="actions-section">
+                <button id="descargarPedidos" class="download-btn">📊 Descargar Reporte del Mes</button>
             </div>
         </div>
-
-        <button id="descargarPedidos" class="main-btn">Descargar Pedidos del Mes</button>
-        <form id="formCrearPedido" class="hidden">
-            <h3>Nuevo Pedido (Caja)</h3>
-            <label for="clienteCaja">Nombre del Cliente:</label>
-            <input type="text" id="clienteCaja" required>
-            <input type="hidden" id="mesaCaja" value="domicilio">
-            <fieldset>
-                <legend>Tamales (cantidad):</legend>
-                <label>Masa Cerdo: <input type="number" min="0" id="masa_cerdoCaja" value="0"></label>
-                <label>Masa Pollo: <input type="number" min="0" id="masa_polloCaja" value="0"></label>
-                <label>Arroz Pollo: <input type="number" min="0" id="arroz_polloCaja" value="0"></label>
-                <label>Arroz Cerdo: <input type="number" min="0" id="arroz_cerdoCaja" value="0"></label>
-            </fieldset>
-            <input type="hidden" id="modalidadCaja" value="domicilio">
-            <div><strong>Modalidad:</strong> Domicilio</div>
-            <button type="submit" class="main-btn">Enviar Pedido</button>
-            <div id="confirmacionCaja" class="hidden"></div>
-        </form>
     </div>
+
+    <!-- Modal para gestionar pedidos -->
     <div id="modalPedido" class="modal hidden">
         <div class="modal-content">
             <span id="cerrarModal" class="close">&times;</span>
             <div id="detallePedido"></div>
-            <label for="adicionales">Dinero adicional (bebidas, etc):</label>
-            <input type="number" id="adicionales" min="0" value="0">
-            <label for="metodoPago">Método de pago:</label>
-            <select id="metodoPago" required>
-                <option value="efectivo">Efectivo</option>
-                <option value="nequi">Nequi</option>
-            </select>
-            <button id="aceptarPedido" class="main-btn">Aceptar</button>
-            <button id="cancelarPedido" class="main-btn">Cancelar</button>
-            <button id="confirmarPago" class="main-btn">Confirmar Pago</button>
+            <div style="margin: 1rem 0;">
+                <label for="adicionales"><b>Dinero adicional (bebidas, etc):</b></label>
+                <input type="number" id="adicionales" min="0" value="0" style="width: 100%; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                
+                <label for="metodoPago"><b>Método de pago:</b></label>
+                <select id="metodoPago" style="width: 100%; margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="nequi">Nequi</option>
+                </select>
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button id="aceptarPedido" class="main-btn">Aceptar</button>
+                <button id="cancelarPedido" class="main-btn">Cancelar</button>
+                <button id="confirmarPago" class="main-btn">Confirmar Pago</button>
+            </div>
         </div>
     </div>
+
+    <!-- Botón de notificaciones flotante -->
+    <button id="btnNotificacionesCaja" class="notification-fab">
+        <span id="iconoNotiCaja" class="notification-icon">🔔</span>
+        <span id="notiCount" class="notification-badge">0</span>
+    </button>
+    
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="scripts/firebase-config.js"></script>
     <script src="scripts/caja.js"></script>
 </body>
 </html>
+
+

@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Pedidos Restaurante</title>
+    <link rel="icon" type="image/png" href="imagenes/tamalito.png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sistema de Pedidos</h1>
-        <a class="main-btn" href="mesero.html">Mesero</a>
-        <a class="main-btn" href="caja.html">Caja / Cocina</a>
+    <div class="index-container">
+        <div class="header-section">
+            <h1><img src="imagenes/tamalito.png" alt="Tamal" class="tamal-icon"> Sistema de Pedidos</h1>
+            <p class="subtitle">Gestión de pedidos para restaurante</p>
+        </div>
+        
+        <div class="cards-container">
+            <a class="card-link" href="mesero.html">
+                <div class="card mesero-card">
+                    <div class="card-icon">👨‍💼</div>
+                    <h3>Mesero</h3>
+                    <p>Crear y enviar pedidos de clientes</p>
+                </div>
+            </a>
+            
+            <a class="card-link" href="caja.html">
+                <div class="card caja-card">
+                    <div class="card-icon">🏪</div>
+                    <h3>Caja / Cocina</h3>
+                    <p>Gestionar pagos y preparación</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="footer-section">
+            <p>Selecciona tu rol para comenzar</p>
+        </div>
     </div>
 </body>
 </html>

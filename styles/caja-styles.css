@@ -1,0 +1,543 @@
+/* Estilos específicos para la página de caja - Responsive */
+
+/* Botón de notificaciones flotante - Colores naranja */
+.notification-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ff6b35;
+    border: none;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .notification-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+.notification-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .notification-icon {
+        font-size: 1.2rem;
+    }
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d2691e;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+@media (max-width: 480px) {
+    .notification-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+        top: -3px;
+        right: -3px;
+    }
+}
+
+/* Inputs del modal de gestión - Responsive */
+#adicionales, #metodoPago {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    #adicionales, #metodoPago {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+#adicionales:focus, #metodoPago:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+/* Botones de atajos de pago - Responsive */
+.btn-cop-sugerido {
+    padding: 0.5rem 0.8rem;
+    background: #fff8f5;
+    border: 1px solid #f4ddd4;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+    color: #8b4513;
+}
+
+@media (max-width: 480px) {
+    .btn-cop-sugerido {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+.btn-cop-sugerido:hover {
+    background: #ffeee6;
+    border-color: #e6c2a6;
+}
+
+/* Contenedor de botones de atajos - Responsive */
+.atajos-container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    .atajos-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+}
+
+/* Información de vueltas y falta - Responsive */
+#vueltasInfo, #faltaInfo {
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 4px;
+    display: none;
+    word-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+    #vueltasInfo, #faltaInfo {
+        padding: 0.6rem;
+        margin-top: 0.6rem;
+    }
+}
+
+#vueltasInfo {
+    background: #e8f5e8;
+    border-left: 4px solid #ff8c42;
+}
+
+#faltaInfo {
+    background: #fdf2f2;
+    border-left: 4px solid #d2691e;
+}
+
+/* Total a pagar - Colores naranja */
+#totalPagarDiv {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #fff3e6;
+    border-left: 4px solid #ff6b35;
+    border-radius: 4px;
+    word-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+    #totalPagarDiv {
+        padding: 0.6rem;
+        margin-top: 0.8rem;
+    }
+}
+
+/* Input de cantidad de pago - Responsive */
+#conCuantoPaga {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    #conCuantoPaga {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+#conCuantoPaga:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.25);
+}
+
+/* Labels en modal - Color marrón */
+label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #8b4513;
+}
+
+@media (max-width: 480px) {
+    label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Botones del modal - Responsive */
+.modal-content .main-btn {
+    margin: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+
+@media (max-width: 480px) {
+    .modal-content .main-btn {
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .modal-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+}
+
+/* Contenido del pedido - Responsive */
+.pedido-info {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.pedido-info ul {
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 480px) {
+    .pedido-info {
+        font-size: 0.9rem;
+    }
+    
+    .pedido-info ul {
+        padding-left: 0.8rem;
+    }
+}
+
+/* Mejoras para el campo de pago efectivo */
+#campoPagoEfectivo {
+    margin-top: 0.7rem;
+}
+
+#campoPagoEfectivo label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+/* Estilos para los textos de cantidad */
+#cantidadVueltas, #cantidadFalta {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    #cantidadVueltas, #cantidadFalta {
+        font-size: 1rem;
+    }
+}
+
+/* Solo agregar mejoras responsive para caja */
+
+/* Contenedor de botones de atajos - Responsive */
+#campoPagoEfectivo div[style*="display:flex"] {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    #campoPagoEfectivo div[style*="display:flex"] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+    }
+}
+
+/* Botones del modal - Responsive */
+@media (max-width: 480px) {
+    .modal-content .main-btn {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    .modal-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+}
+
+/* Inputs responsive */
+@media (max-width: 480px) {
+    #adicionales, #metodoPago, #conCuantoPaga {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-cop-sugerido {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    #vueltasInfo, #faltaInfo, #totalPagarDiv {
+        padding: 0.6rem;
+        margin-top: 0.6rem;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    #cantidadVueltas, #cantidadFalta {
+        font-size: 1rem;
+    }
+}
+
+/* Estilos específicos para el formulario de pedido domiciliario en caja */
+#modalCrearPedidoCaja .modal-content {
+    max-width: 450px;
+    padding: 1.5rem;
+}
+
+#modalCrearPedidoCaja h3 {
+    color: #ff6b35;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+#modalCrearPedidoCaja label {
+    font-weight: 600;
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+#modalCrearPedidoCaja input[type="text"],
+#modalCrearPedidoCaja input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#modalCrearPedidoCaja input[type="text"]:focus,
+#modalCrearPedidoCaja input[type="number"]:focus {
+    outline: none;
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+#modalCrearPedidoCaja fieldset {
+    border: 2px solid #f4ddd4;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #fff8f5;
+}
+
+#modalCrearPedidoCaja legend {
+    font-weight: 600;
+    color: #8b4513;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+}
+
+#modalCrearPedidoCaja fieldset label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: #a0522d;
+}
+
+#modalCrearPedidoCaja fieldset input[type="number"] {
+    width: 80px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#modalCrearPedidoCaja .modalidad-info {
+    background: #fff3e6;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    border-left: 4px solid #ff8c42;
+}
+
+#modalCrearPedidoCaja .modalidad-info strong {
+    color: #d2691e;
+    font-size: 1rem;
+}
+
+#modalCrearPedidoCaja button[type="submit"] {
+    width: 100%;
+    background: #ff8c42;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+#modalCrearPedidoCaja button[type="submit"]:hover {
+    background: #e6773a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+}
+
+#modalCrearPedidoCaja .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #a0522d;
+    font-weight: bold;
+    z-index: 1001;
+}
+
+#modalCrearPedidoCaja .close:hover {
+    color: #8b4513;
+}
+
+/* Mensaje de confirmación - Colores naranja */
+#confirmacionCajaModal {
+    background: #e8f5e8;
+    color: #2d7d32;
+    padding: 0.8rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    border: 1px solid #c8e6c9;
+}
+
+/* Responsive para el modal de crear pedido */
+@media (max-width: 480px) {
+    #modalCrearPedidoCaja .modal-content {
+        padding: 1rem;
+        margin: 0.5rem;
+        max-width: 95%;
+    }
+    
+    #modalCrearPedidoCaja h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    #modalCrearPedidoCaja fieldset {
+        padding: 0.8rem;
+        margin: 0.8rem 0;
+    }
+    
+    #modalCrearPedidoCaja fieldset label {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+    }
+    
+    #modalCrearPedidoCaja fieldset input[type="number"] {
+        width: 100%;
+        text-align: left;
+    }
+    
+    #modalCrearPedidoCaja input[type="text"],
+    #modalCrearPedidoCaja input[type="number"] {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    #modalCrearPedidoCaja button[type="submit"] {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mejoras visuales adicionales */
+#modalCrearPedidoCaja fieldset input[type="number"]::-webkit-outer-spin-button,
+#modalCrearPedidoCaja fieldset input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#modalCrearPedidoCaja fieldset input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Animación suave para el modal */
+#modalCrearPedidoCaja.modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

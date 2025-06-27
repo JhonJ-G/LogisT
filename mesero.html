@@ -4,44 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesero - Sistema de Pedidos</title>
+    <link rel="icon" type="image/png" href="imagenes/tamalito.png">
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Estilos específicos para modales del mesero */
+        .modal-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .modal-content li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-content li:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Nuevo Pedido</h2>
-        <form id="pedidoForm">
-            <label for="cliente">Nombre del Cliente:</label>
-            <input type="text" id="cliente" name="cliente" required>
+    <div class="page-container">
+        <div class="header-bar">
+            <a href="index.html" class="back-btn">← Inicio</a>
+            <h2>👨‍💼 Mesero</h2>
+            <div class="spacer"></div>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="form-card">
+                <h3>Nuevo Pedido</h3>
+                <form id="pedidoForm" class="modern-form">
+                    <div class="form-group">
+                        <label for="modalidad">Modalidad:</label>
+                        <select id="modalidad" name="modalidad" required class="form-select">
+                            <option value="local">🏪 Local (Mesa)</option>
+                            <option value="domicilio">🚗 Domicilio</option>
+                        </select>
+                    </div>
 
-            <label for="mesa">Número de Mesa:</label>
-            <select id="mesa" name="mesa" required>
-                <option value="">Seleccione mesa</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
+                    <div id="grupoCliente" class="form-group">
+                        <label for="cliente">Nombre del Cliente:</label>
+                        <input type="text" id="cliente" name="cliente" class="form-input" placeholder="Ingrese el nombre">
+                    </div>
 
-            <fieldset>
-                <legend>Tamales (cantidad):</legend>
-                <label>Masa Cerdo: <input type="number" min="0" id="masa_cerdo" value="0"></label>
-                <label>Masa Pollo: <input type="number" min="0" id="masa_pollo" value="0"></label>
-                <label>Arroz Pollo: <input type="number" min="0" id="arroz_pollo" value="0"></label>
-                <label>Arroz Cerdo: <input type="number" min="0" id="arroz_cerdo" value="0"></label>
-            </fieldset>
-            <label for="modalidad">Modalidad:</label>
-            <select id="modalidad" name="modalidad" required>
-                <option value="local">Local</option>
-                <option value="domicilio">Domicilio</option>
-            </select>
-            <button type="submit" class="main-btn">Enviar Pedido</button>
-        </form>
-        <div id="confirmacion" class="hidden"></div>
+                    <div id="grupoMesa" class="form-group">
+                        <label for="mesa">Número de Mesa:</label>
+                        <select id="mesa" name="mesa" required class="form-select">
+                            <option value="">Seleccione mesa</option>
+                            <option value="1">Mesa 1</option>
+                            <option value="2">Mesa 2</option>
+                            <option value="3">Mesa 3</option>
+                        </select>
+                    </div>
+
+                    <div class="tamales-section">
+                        <h4><img src="imagenes/tamalito.png" alt="Tamal" class="tamal-icon-small"> Tamales (cantidad):</h4>
+                        <div class="tamales-grid">
+                            <div class="tamal-item">
+                                <label>Masa Cerdo</label>
+                                <input type="number" min="0" id="masa_cerdo" value="0" class="quantity-input">
+                            </div>
+                            <div class="tamal-item">
+                                <label>Masa Pollo</label>
+                                <input type="number" min="0" id="masa_pollo" value="0" class="quantity-input">
+                            </div>
+                            <div class="tamal-item">
+                                <label>Arroz Pollo</label>
+                                <input type="number" min="0" id="arroz_pollo" value="0" class="quantity-input">
+                            </div>
+                            <div class="tamal-item">
+                                <label>Arroz Cerdo</label>
+                                <input type="number" min="0" id="arroz_cerdo" value="0" class="quantity-input">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">📤 Enviar Pedido</button>
+                </form>
+                
+                <div id="confirmacion" class="success-message hidden"></div>
+            </div>
+        </div>
     </div>
+    
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="scripts/firebase-config.js"></script>
     <script src="scripts/mesero.js"></script>
 </body>
 </html>
-</body>
-</html>
+
+
