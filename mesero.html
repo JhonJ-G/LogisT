@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesero - Sistema de Pedidos</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Nuevo Pedido</h2>
+        <form id="pedidoForm">
+            <label for="cliente">Nombre del Cliente:</label>
+            <input type="text" id="cliente" name="cliente" required>
+
+            <label for="mesa">Número de Mesa:</label>
+            <select id="mesa" name="mesa" required>
+                <option value="">Seleccione mesa</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <fieldset>
+                <legend>Tamales (cantidad):</legend>
+                <label>Masa Cerdo: <input type="number" min="0" id="masa_cerdo" value="0"></label>
+                <label>Masa Pollo: <input type="number" min="0" id="masa_pollo" value="0"></label>
+                <label>Arroz Pollo: <input type="number" min="0" id="arroz_pollo" value="0"></label>
+                <label>Arroz Cerdo: <input type="number" min="0" id="arroz_cerdo" value="0"></label>
+            </fieldset>
+            <label for="modalidad">Modalidad:</label>
+            <select id="modalidad" name="modalidad" required>
+                <option value="local">Local</option>
+                <option value="domicilio">Domicilio</option>
+            </select>
+            <button type="submit" class="main-btn">Enviar Pedido</button>
+        </form>
+        <div id="confirmacion" class="hidden"></div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="scripts/firebase-config.js"></script>
+    <script src="scripts/mesero.js"></script>
+</body>
+</html>
+</body>
+</html>

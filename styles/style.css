@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1, h2 {
+    text-align: center;
+}
+label, legend {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+input[type="text"], select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+fieldset {
+    border: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+label input[type="checkbox"] {
+    margin-right: 0.5rem;
+    font-weight: normal;
+}
+.main-btn, button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.main-btn:hover, button:hover {
+    background: #0056b3;
+}
+#confirmacion {
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+#notificacion {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #ffe082;
+    color: #795548;
+    border-radius: 5px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+.pedido {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fafafa;
+    position: relative;
+}
+.pedido.preparado {
+    background: #e0ffe0;
+    border-color: #8bc34a;
+}
+.pedido .estado {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 350px;
+    width: 90vw;
+    text-align: center;
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+.modal.hidden {
+    display: none !important;
+}
+#formCrearPedido {
+    margin-top: 2rem;
+    background: #f4f8ff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.pedidos-flex {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.col-pedidos {
+    flex: 1 1 0;
+    min-width: 320px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 0 0.7rem;
+    transition: box-shadow 0.2s;
+}
+.col-pedidos h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    color: #007bff;
+    font-size: 1.18rem;
+    letter-spacing: 0.5px;
+}
+#listaPedidosPendientes, #listaPedidosPagados {
+    min-height: 60px;
+}
+.pedido {
+    margin-bottom: 1.2rem;
+    background: #f8fafd;
+    border-radius: 8px;
+    padding: 1.1rem 1rem 0.8rem 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid #e3eaf3;
+    transition: box-shadow 0.2s;
+}
+.pedido.preparado {
+    background: #e0ffe0;
+    border-color: #8bc34a;
+}
+.pedido .estado {
+    position: static;
+    margin-top: 0.7rem;
+    font-size: 0.98rem;
+    font-weight: bold;
+    text-align: right;
+}
+.oval-btn {
+    border-radius: 999px !important;
+    padding-left: 2.2em !important;
+    padding-right: 2.2em !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+@media (max-width: 500px) {
+    .container {
+        max-width: 98vw;
+        padding: 1rem;
+    }
+    h1, h2 {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 900px) {
+    .pedidos-flex {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .col-pedidos {
+        min-width: unset;
+        margin: 0 0 1.5rem 0;
+    }
+}
